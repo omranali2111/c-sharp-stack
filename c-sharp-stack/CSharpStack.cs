@@ -9,8 +9,8 @@ namespace c_sharp_stack
     internal class CSharpStack
     {
         int top;
-        int[] stack = new int[10];
-        bool IsEmpty()
+       private int[] stack = new int[10];
+        private bool IsEmpty()
         {
             return (top < 0);
         }
@@ -20,7 +20,7 @@ namespace c_sharp_stack
         }
         public  bool Push(int data)
         {
-            if (top >= 10)
+            if (top >= 9)
             {
                 Console.WriteLine("Stack is full");
                 return false;
@@ -34,7 +34,7 @@ namespace c_sharp_stack
         }
        public int Pop()
         {
-            if (top < 0)
+            if (IsEmpty())
             {
                 Console.WriteLine("Stack is empty");
                 return 0;
@@ -48,7 +48,7 @@ namespace c_sharp_stack
         }
         public void Peek()
         {
-            if (top < 0)
+            if (IsEmpty())
             {
                 Console.WriteLine("Stack is empty");
                 return;
